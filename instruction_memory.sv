@@ -22,9 +22,9 @@ module instruction_memory(
 		       // 0000_0000_0111_0011_0010_1000_0010_0011 rs2
 		       // ->00111,rs1->00110,imm->01_0000
                        memory[3] = 8'h00;
-                       memory[2] = 8'h73;
-                       memory[1] = 8'h28;
-                       memory[0] = 8'h23;
+                       memory[2] = 8'hc2;
+                       memory[1] = 8'h82;
+                       memory[0] = 8'h83;
                        // Setting 32-bit instruction: sub : 0x800100b3
                        memory[7] = 8'h80;
                        memory[6] = 8'h01;

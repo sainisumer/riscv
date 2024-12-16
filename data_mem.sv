@@ -14,7 +14,7 @@ module data_mem (
     // Read operation
     always_comb begin
         if (mem_read) begin
-            read_data = memory_array[address[11:2]]; // Address decoded for word alignment
+            read_data = memory_array[address]; // Address decoded for word alignment
         end else begin
             read_data = 32'b0;                      // Default to 0 when not reading
         end
@@ -26,10 +26,10 @@ module data_mem (
             // Initialize memory during reset (optional, can be removed)
             integer i;
             for (i = 0; i < 1024; i++) begin
-                memory_array[i] <= 32'b0;
+                memory_array[i] <= i;
             end
         end else if (mem_write) begin
-            memory_array[address[11:2]] <= write_data; // Write data to memory
+            memory_array[address] <= write_data; // Write data to memory
         end
     end
 
